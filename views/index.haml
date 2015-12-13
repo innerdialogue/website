@@ -41,23 +41,23 @@
                 .panel-body
                   %form.form-horizontal
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputName"} Name
+                      %label.col-sm-2.control-label{for:  "personal-inputName"} Name
                       .col-sm-10
-                        %input#inputName.form-control{type:  "text"}
+                        %input#personal-inputName.form-control{type:  "text"}
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputEmail"} Email
+                      %label.col-sm-2.control-label{for:  "personal-inputEmail"} Email
                       .col-sm-10
-                        %input#inputEmail.form-control{type:  "email"}
+                        %input#personal-inputEmail.form-control{type:  "email"}
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputPhone"} Contact number
+                      %label.col-sm-2.control-label{for:  "personal-inputPhone"} Contact number
                       .col-sm-10
-                        %input#inputPhone.form-control{type:  "tel"}
+                        %input#personal-inputPhone.form-control{type:  "tel"}
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Desired Appointment date/time
+                      %label.col-sm-2.control-label{for: "personal-inputSchedule"} Desired Appointment date/time
                       .col-sm-4
-                        %input#inputSchedule.form-control{type: "datetime-local"}
+                        %input#personal-inputSchedule.form-control{type: "datetime-local"}
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Language(s) of choice
+                      %label.col-sm-2.control-label Language(s) of choice
                       .col-sm-10
                         -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
                         -languages.each do |lang|
@@ -65,7 +65,7 @@
                             %input{type: 'checkbox', value: lang[:code]}
                               =lang[:label]
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Mode of therapy
+                      %label.col-sm-2.control-label Mode of therapy
                       .col-sm-10
                         %select.form-control
                           -modes = [{label: 'Face to Face', code: 'f2f'}, {label: 'Telephonic', code: 'tel'}, {label: 'Email', code: 'email'}, {label: 'Video (Skype/Hangouts)', code: 'vid'}, {label: 'Chat (Skype/Hangouts)', code: 'chat'}]
@@ -94,27 +94,27 @@
                 .panel-body
                   %form.form-horizontal
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputName"} Name
+                      %label.col-sm-2.control-label{for:  "group-inputName"} Name
                       .col-sm-10
-                        %input#inputName.form-control{type:  "text"}
+                        %input#group-inputName.form-control{type:  "text"}
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputEmail"} Email
+                      %label.col-sm-2.control-label{for:  "group-inputEmail"} Email
                       .col-sm-10
-                        %input#inputEmail.form-control{type:  "email"}
+                        %input#group-inputEmail.form-control{type:  "email"}
                     .form-group
-                      %label.col-sm-2.control-label{for:  "inputPhone"} Contact number
+                      %label.col-sm-2.control-label{for:  "group-inputPhone"} Contact number
                       .col-sm-10
-                        %input#inputPhone.form-control{type:  "tel"}
+                        %input#group-inputPhone.form-control{type:  "tel"}
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Workshop requirement
+                      %label.col-sm-2.control-label{for: "group-inputDesc"} Workshop requirement
                       .col-sm-10
-                        %textarea#inputMsg.form-control{rows:  "3"}
+                        %textarea#group-inputDesc.form-control{rows:  "3"}
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Preferred Date
+                      %label.col-sm-2.control-label{for: "group-inputSchedule"} Preferred Date
                       .col-sm-3
-                        %input#inputSchedule.form-control{type: "date"}
+                        %input#group-inputSchedule.form-control{type: "date"}
                     .form-group
-                      %label.col-sm-2.control-label{for: "inputSchedule"} Language(s) of choice
+                      %label.col-sm-2.control-label Language(s) of choice
                       .col-sm-10
                         -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
                         -languages.each do |lang|
@@ -148,21 +148,21 @@
           %hr
           %form.form-horizontal
             .form-group
-              %label.col-sm-2.control-label{for:  "inputName"} Name
+              %label.col-sm-2.control-label{for:  "contact-inputName"} Name
               .col-sm-10
-                %input#inputName.form-control{type:  "text"}
+                %input#contact-inputName.form-control{type:  "text"}
             .form-group
-              %label.col-sm-2.control-label{for:  "inputEmail"} Email
+              %label.col-sm-2.control-label{for:  "contact-inputEmail"} Email
               .col-sm-10
-                %input#inputEmail.form-control{type:  "email"}
+                %input#contact-inputEmail.form-control{type:  "email"}
             .form-group
-              %label.col-sm-2.control-label{for:  "inputPhone"} Contact no.
+              %label.col-sm-2.control-label{for:  "contact-inputPhone"} Contact no.
               .col-sm-10
-                %input#inputPhone.form-control{type:  "tel"}
+                %input#contact-inputPhone.form-control{type:  "tel"}
             .form-group
-              %label.col-sm-2.control-label{for:  "inputMsg"} Message
+              %label.col-sm-2.control-label{for:  "contact-inputMsg"} Message
               .col-sm-10
-                %textarea#inputMsg.form-control{rows:  "3"}
+                %textarea#contact-inputMsg.form-control{rows:  "3"}
             .form-group
               .col-sm-10.col-sm-offset-2
                 .g-recaptcha
