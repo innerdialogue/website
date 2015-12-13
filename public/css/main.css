@@ -668,6 +668,14 @@ p.lead-sm {
 	font-size: 16px;
 }
 
+.strip-left {
+	padding-left: 0px;
+}
+
+.strip-right {
+	padding-right: 0px;
+}
+
 hr {
    border-color: #ddd !important;
    margin-top: 0 !important;
