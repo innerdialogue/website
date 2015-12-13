@@ -26,7 +26,109 @@
     #app.tab-pane{role:  "tabpanel"}
       .panel.panel-primary
         .panel-body
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus nisl justo, eget feugiat odio consequat quis. Aenean fermentum mattis libero, in facilisis nisl pellentesque id.
+          #accordion.panel-group{role: "tablist", "aria-multiselectable" => "true"}
+            .panel.panel-default
+              #app-personal-heading.panel-heading{role: "tab"}
+                %table.panel-title
+                  /%a{role: "button", href: "#app-personal", "aria-expanded" => "true", "aria-controls" => "app-personal", data: { toggle: "collapse", parent: "#accordion"}}
+                  %tbody
+                    %tr
+                      %td
+                        %i.icon.fa-user
+                      %td
+                        Personal therapy session
+              #app-personal.panel-collapse.collapse{role: "tabpanel", "aria-labelledby" => "app-personal-heading"}
+                .panel-body
+                  %form.form-horizontal
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputName"} Name
+                      .col-sm-10
+                        %input#inputName.form-control{type:  "text"}
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputEmail"} Email
+                      .col-sm-10
+                        %input#inputEmail.form-control{type:  "email"}
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputPhone"} Contact number
+                      .col-sm-10
+                        %input#inputPhone.form-control{type:  "tel"}
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Desired Appointment date/time
+                      .col-sm-4
+                        %input#inputSchedule.form-control{type: "datetime-local"}
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Language(s) of choice
+                      .col-sm-10
+                        -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
+                        -languages.each do |lang|
+                          %label.checkbox-inline
+                            %input{type: 'checkbox', value: lang[:code]}
+                              =lang[:label]
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Mode of therapy
+                      .col-sm-10
+                        %select.form-control
+                          -modes = [{label: 'Face to Face', code: 'f2f'}, {label: 'Telephonic', code: 'tel'}, {label: 'Email', code: 'email'}, {label: 'Video (Skype/Hangouts)', code: 'vid'}, {label: 'Chat (Skype/Hangouts)', code: 'chat'}]
+                          -modes.each do |mode|
+                            %option{value: mode[:code]}
+                              =mode[:label]
+                    .form-group
+                      .col-sm-10.col-sm-offset-2
+                        .g-recaptcha
+                    .form-group
+                      .col-sm-offset-2.col-sm-10
+                        %button.btn.btn-primary{type:  "submit"}
+                          %i.icon.fa-calendar-check-o
+                          Submit request
+            .panel.panel-default
+              #app-group-heading.panel-heading{role: "tab"}
+                %table.panel-title
+                  /%a{role: "button", href: "#app-group", "aria-expanded" => "true", "aria-controls" => "app-group", data: { toggle: "collapse", parent: "#accordion"}}
+                  %tbody
+                    %tr
+                      %td
+                        %i.icon.fa-users
+                      %td
+                        Group workshop
+              #app-group.panel-collapse.collapse{role: "tabpanel", "aria-labelledby" => "app-group-heading"}
+                .panel-body
+                  %form.form-horizontal
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputName"} Name
+                      .col-sm-10
+                        %input#inputName.form-control{type:  "text"}
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputEmail"} Email
+                      .col-sm-10
+                        %input#inputEmail.form-control{type:  "email"}
+                    .form-group
+                      %label.col-sm-2.control-label{for:  "inputPhone"} Contact number
+                      .col-sm-10
+                        %input#inputPhone.form-control{type:  "tel"}
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Workshop requirement
+                      .col-sm-10
+                        %textarea#inputMsg.form-control{rows:  "3"}
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Preferred Date
+                      .col-sm-3
+                        %input#inputSchedule.form-control{type: "date"}
+                    .form-group
+                      %label.col-sm-2.control-label{for: "inputSchedule"} Language(s) of choice
+                      .col-sm-10
+                        -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
+                        -languages.each do |lang|
+                          %label.checkbox-inline
+                            %input{type: 'checkbox', value: lang[:code]}
+                              =lang[:label]
+                    .form-group
+                      .col-sm-10.col-sm-offset-2
+                        .g-recaptcha
+                    .form-group
+                      .col-sm-offset-2.col-sm-10
+                        %button.btn.btn-primary{type:  "submit"}
+                          %i.icon.fa-calendar-check-o
+                          Submit request
     #contact.tab-pane{role:  "tabpanel"}
       .panel.panel-primary
         .panel-body
@@ -63,7 +165,7 @@
                 %textarea#inputMsg.form-control{rows:  "3"}
             .form-group
               .col-sm-10.col-sm-offset-2
-                .g-recaptcha{data: {sitekey: "6Lcn8BITAAAAAM-OFAx5x1GoZLT__SCoLM8_ZmoQ"}}
+                .g-recaptcha
             .form-group
               .col-sm-offset-2.col-sm-10
                 %button.btn.btn-primary{type:  "submit"}

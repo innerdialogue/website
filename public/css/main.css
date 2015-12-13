@@ -88,7 +88,7 @@
 		-webkit-transition: border-color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
+		/*border-bottom: dotted 1px;*/
 		color: inherit;
 		outline: 0;
 		text-decoration: none;
@@ -656,18 +656,18 @@
 
 /* Panels */
 
-p.lead {
-	margin-bottom: 0px;
+#accordion .panel-heading {
+    cursor: pointer;
 }
 
-hr {
-	border-color: #ddd;
-	margin-top: 0 !important;
+table.panel-title td:first-child {
+	width: 20px;
+	text-align: center;
 }
 
-/*table.only-for-underline td {
-	border-top: none !important;
-}*/
+table.panel-title td:nth-child(2) {
+	padding-left: 10px;
+}
 
 /* Wide */
 
