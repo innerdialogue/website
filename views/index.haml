@@ -1,0 +1,74 @@
+#main
+  / Header
+  %header#header
+    %h1
+    %nav
+      %ul{role:  "tablist"}
+        %li{role:  "presentation"}
+          %a.icon.fa-home{data: { placement: "left", toggle: "tab" }, href:  "#home", role:  "tab", title:  "Home"}
+        %li{role:  "presentation"}
+          %a.icon.fa-child{data: { placement: "left", toggle: "tab" }, href:  "#services", role:  "tab", title:  "Services"}
+        %li{role:  "presentation"}
+          %a.icon.fa-book{data: { placement: "left", toggle: "tab" }, href:  "#blog", role:  "tab", title:  "Articles"}
+        %li{role:  "presentation"}
+          %a.icon.fa-calendar{data: { html: "true", placement: "left", toggle: "tab" }, href:  "#app", role:  "tab", title:  "Book an<br/>appointment"}
+        %li{role:  "presentation"}
+          %a.icon.fa-envelope-o{data: { html: "true", placement: "left", toggle: "tab" }, href:  "#contact", role:  "tab", title:  "Contact<br/>us"}
+  .tab-content
+    #home.tab-pane{role:  "tabpanel"}
+      .panel.panel-primary
+        .panel-body
+          Nam tempor mi et libero dapibus, pretium fringilla neque sodales. Integer quis tortor eu mauris efficitur fermentum sed in velit.
+    #services.tab-pane{role:  "tabpanel"}
+      .panel.panel-primary
+        .panel-body
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus nisl justo, eget feugiat odio consequat quis. Aenean fermentum mattis libero, in facilisis nisl pellentesque id.
+    #app.tab-pane{role:  "tabpanel"}
+      .panel.panel-primary
+        .panel-body
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus nisl justo, eget feugiat odio consequat quis. Aenean fermentum mattis libero, in facilisis nisl pellentesque id.
+    #contact.tab-pane{role:  "tabpanel"}
+      .panel.panel-primary
+        .panel-body
+          %p.lead Drop us an email or give us a call:
+          %hr
+            .row
+              .col-sm-6
+                %i.icon.fa-at.fa-2x
+                \&nbsp;
+                %a{href:  "mailto:email@innerdialogue.in"} email@innerdialogue.in
+              .col-sm-6
+                %i.icon.fa-phone.fa-2x
+                \&nbsp;
+                %a{href:  "tel:+917022159160"} +91 7022 159 160
+            .row &nbsp;
+            %p.lead Or leave a message:
+            %hr
+              %form.form-horizontal
+                .form-group
+                  %label.col-sm-2.control-label{for:  "inputName"} Name
+                  .col-sm-10
+                    %input#inputName.form-control{type:  "text"}
+                .form-group
+                  %label.col-sm-2.control-label{for:  "inputEmail"} Email
+                  .col-sm-10
+                    %input#inputEmail.form-control{type:  "email"}
+                .form-group
+                  %label.col-sm-2.control-label{for:  "inputPhone"} Contact no.
+                  .col-sm-10
+                    %input#inputPhone.form-control{type:  "tel"}
+                .form-group
+                  %label.col-sm-2.control-label{for:  "inputMsg"} Message
+                  .col-sm-10
+                    %textarea#inputMsg.form-control{rows:  "3"}
+                .form-group
+                  .col-sm-10.col-sm-offset-2
+                    .g-recaptcha{data: {sitekey: "6Lcn8BITAAAAAM-OFAx5x1GoZLT__SCoLM8_ZmoQ"}}
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    %button.btn.btn-default{type:  "submit"}
+                      %i.icon.fa-paper-plane
+                      Send
+  / Footer
+  %footer#footer
+    %span.copyright &copy; Inner Dialogue.

@@ -1,0 +1,30 @@
+!!!
+/
+  Aerial by HTML5 UP
+  html5up.net | @n33co
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+%html
+  %head
+    %title Inner Dialogue
+    %meta{charset:  "utf-8"}
+    %meta{content:  "width=device-width, initial-scale=1", name:  "viewport"}
+    /[if lte IE 8] <script src="assets/js/ie/html5shiv.js"></script>
+    %link{href:  "/css/main.css", rel:  "stylesheet"}
+    %script{src:  "/js/jquery.min.js"}
+    %script{src:  "/js/main.js"}
+    /[if lte IE 8] <link rel="stylesheet" href="assets/css/ie8.css" />
+    /[if lte IE 9] <link rel="stylesheet" href="assets/css/ie9.css" />
+    %link{crossorigin:  "anonymous", href:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity:  "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", rel:  "stylesheet"}
+      %script{crossorigin:  "anonymous", integrity:  "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", src:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"}
+      %script{src:  "https://www.google.com/recaptcha/api.js"}
+  %body.loading
+    #wrapper
+      #bg
+
+      =yield
+
+    /[if lte IE 8] <script src="assets/js/ie/respond.min.js"></script>
+    :javascript
+      window.onload = function() { document.body.className = ''; }
+      window.ontouchmove = function() { return false; }
+      window.onorientationchange = function() { document.body.scrollTop = 0; }
