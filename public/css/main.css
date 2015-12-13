@@ -656,6 +656,15 @@
 
 /* Panels */
 
+p.lead {
+   margin-bottom: 0px;
+}
+
+hr {
+   border-color: #ddd;
+   margin-top: 0 !important;
+}
+
 #accordion .panel-heading {
     cursor: pointer;
 }
