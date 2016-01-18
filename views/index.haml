@@ -81,35 +81,35 @@
                         Personal therapy
               #app-personal.panel-collapse.collapse{role: "tabpanel", "aria-labelledby" => "app-personal-heading"}
                 .panel-body
-                  %form.form-horizontal
+                  %form#therapy-form.form-horizontal{data: {action: "/ajax/book-therapy"}}
                     .form-group
                       %label.col-sm-2.control-label{for:  "personal-inputName"} Name
                       .col-sm-10
-                        %input#personal-inputName.form-control{type:  "text"}
+                        %input#personal-inputName.form-control{type:  "text", name: "name", required: true}
                     .form-group
                       %label.col-sm-2.control-label{for:  "personal-inputEmail"} Email
                       .col-sm-10
-                        %input#personal-inputEmail.form-control{type:  "email"}
+                        %input#personal-inputEmail.form-control{type:  "email", name: "email"}
                     .form-group
                       %label.col-sm-2.control-label{for:  "personal-inputPhone"} Contact number
                       .col-sm-10
-                        %input#personal-inputPhone.form-control{type:  "tel"}
+                        %input#personal-inputPhone.form-control{type:  "tel", name: "phone"}
                     .form-group
                       %label.col-sm-2.control-label{for: "personal-inputSchedule"} Desired Appointment date/time
                       .col-sm-4
-                        %input#personal-inputSchedule.form-control{type: "datetime-local"}
+                        %input#personal-inputSchedule.form-control{type: "datetime-local", name: "schedule", required: true}
                     .form-group
                       %label.col-sm-2.control-label Language(s) of choice
                       .col-sm-10
                         -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
                         -languages.each do |lang|
                           %label.checkbox-inline
-                            %input{type: 'checkbox', value: lang[:code]}
+                            %input{type: 'checkbox', value: lang[:code], name: "lang[]"}
                               =lang[:label]
                     .form-group
                       %label.col-sm-2.control-label Mode of therapy
                       .col-sm-10
-                        %select.form-control
+                        %select.form-control{name: "mode", required: true}
                           -modes = [{label: 'Face to Face', code: 'f2f'}, {label: 'Telephonic', code: 'tel'}, {label: 'Email', code: 'email'}, {label: 'Video (Skype/Hangouts)', code: 'vid'}, {label: 'Chat (Skype/Hangouts)', code: 'chat'}]
                           -modes.each do |mode|
                             %option{value: mode[:code]}
@@ -122,6 +122,9 @@
                         %button.btn.btn-primary{type:  "submit"}
                           %i.icon.fa-calendar-check-o
                           Submit request
+                        \&nbsp;
+                        %small
+                          %em#therapy-status
             .panel.panel-default
               #app-group-heading.panel-heading{role: "tab"}
                 %table.panel-title
@@ -134,27 +137,27 @@
                         Group workshop
               #app-group.panel-collapse.collapse{role: "tabpanel", "aria-labelledby" => "app-group-heading"}
                 .panel-body
-                  %form.form-horizontal
+                  %form#workshop-form.form-horizontal{data: {action: "/ajax/book-workshop"}}
                     .form-group
                       %label.col-sm-2.control-label{for:  "group-inputName"} Name
                       .col-sm-10
-                        %input#group-inputName.form-control{type:  "text"}
+                        %input#group-inputName.form-control{type:  "text", name: "name", required: true}
                     .form-group
                       %label.col-sm-2.control-label{for:  "group-inputEmail"} Email
                       .col-sm-10
-                        %input#group-inputEmail.form-control{type:  "email"}
+                        %input#group-inputEmail.form-control{type:  "email", name: "email"}
                     .form-group
                       %label.col-sm-2.control-label{for:  "group-inputPhone"} Contact number
                       .col-sm-10
-                        %input#group-inputPhone.form-control{type:  "tel"}
+                        %input#group-inputPhone.form-control{type:  "tel", name: "phone"}
                     .form-group
                       %label.col-sm-2.control-label{for: "group-inputDesc"} Workshop requirement
                       .col-sm-10
-                        %textarea#group-inputDesc.form-control{rows:  "3"}
+                        %textarea#group-inputDesc.form-control{rows:  "3", name: "desc", required: true}
                     .form-group
                       %label.col-sm-2.control-label Location
                       .col-sm-4
-                        %select.form-control
+                        %select.form-control{name: "city", required: true}
                           %option (Select your city)
                           -cities = ["Mumbai", "New Delhi", "Bangalore", "Hyderabad", "Chennai", "Ahmedabad", "Kolkata", "Surat", "Pune", "Jaipur", "Lucknow", "Kanpur", "Nagpur", "Indore", "Visakhapatnam", "Thane", "Bhopal", "Pimpri-Chinchwad", "Patna", "Vadodara", "Ghaziabad", "Ludhiana", "Agra", "Nashik", "Faridabad", "Meerut", "Rajkot", "Kalyan-Dombivali", "Vasai-Virar", "Varanasi", "Srinagar", "Aurangabad", "Dhanbad", "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi", "Howrah", "Coimbatore", "Jabalpur", "Gwalior", "Vijayawada", "Jodhpur", "Madurai", "Raipur", "Kota", "Guwahati", "Chandigarh", "Solapur", "Hubballi-Dharwad", "Tiruchirappalli", "Bareilly", "Moradabad", "Mysore", "Gurgaon", "Aligarh", "Jalandhar", "Bhubaneswar", "Salem", "Mira-Bhayandar", "Warangal", "Thiruvananthapuram", "Guntur", "Bhiwandi", "Saharanpur", "Gorakhpur", "Bikaner", "Amravati", "Noida", "Jamshedpur", "Bhilai", "Cuttack", "Firozabad", "Kochi", "Nellore", "Bhavnagar", "Dehradun", "Durgapur", "Asansol", "Nanded", "Kolhapur", "Ajmer", "Gulbarga", "Jamnagar", "Ujjain", "Loni", "Siliguri", "Jhansi", "Ulhasnagar", "Jammu", "Sangli-Miraj & Kupwad", "Mangalore", "Belgaum", "Ambattur", "Tirunelveli", "Malegaon", "Gaya", "Jalgaon", "Udaipur", "Maheshtala", "Tirupur", "Davanagere", "Kozhikode", "Akola", "Kurnool", "Rajpur Sonarpur", "Rajahmundry[10]", "Bokaro", "South Dumdum", "Bellary", "Patiala", "Gopalpur", "Agartala", "Bhagalpur", "Muzaffarnagar", "Bhatpara", "Panihati", "Latur", "Dhule", "Rohtak", "Korba", "Bhilwara", "Berhampur", "Muzaffarpur", "Ahmednagar", "Mathura", "Kollam", "Avadi", "Kadapa", "Kamarhati", "Bilaspur", "Shahjahanpur", "Satara", "Bijapur", "Rampur", "Shivamogga (Shimoga)", "Chandrapur", "Junagadh", "Thrissur", "Alwar", "Bardhaman", "Kulti", "Kakinada", "Nizamabad", "Parbhani", "Tumkur", "Hisar", "Ozhukarai", "Bihar Sharif", "Panipat", "Darbhanga", "Bally", "Aizawl", "Dewas", "Ichalkaranji", "Tirupati", "Karnal", "Bathinda", "Jalna", "Barasat", "Kirari Suleman Nagar", "Purnia", "Satna", "Mau", "Sonipat", "Farrukhabad", "Sagar", "Rourkela", "Durg", "Imphal", "Ratlam", "Hapur", "Anantapur", "Arrah", "Karimnagar", "Ramagundam", "Etawah", "Ambernath", "North Dumdum", "Bharatpur", "Begusarai", "New Delhi", "Gandhidham", "Baranagar", "Tiruvottiyur", "Puducherry", "Sikar", "Thoothukudi", "Rewa", "Mirzapur", "Raichur", "Pali", "Vijayanagaram", "Katihar", "Haridwar", "Sri Ganganagar", "Karawal Nagar", "Nagercoil", "Mango"].sort
                           -cities.each do |city|
@@ -163,14 +166,14 @@
                     .form-group
                       %label.col-sm-2.control-label{for: "group-inputSchedule"} Preferred Date
                       .col-sm-3
-                        %input#group-inputSchedule.form-control{type: "date"}
+                        %input#group-inputSchedule.form-control{type: "date", name: "schedule", required: true}
                     .form-group
                       %label.col-sm-2.control-label Language(s) of choice
                       .col-sm-10
                         -languages = [{label: 'English', code: 'en'}, {label: 'Hindi', code: 'hi'}, {label: 'Gujarati', code: 'gu'}, {label: 'Malyalam', code: 'ma'}]
                         -languages.each do |lang|
                           %label.checkbox-inline
-                            %input{type: 'checkbox', value: lang[:code]}
+                            %input{type: 'checkbox', value: lang[:code], name: "lang[]"}
                               =lang[:label]
                     .form-group
                       .col-sm-10.col-sm-offset-2
@@ -180,6 +183,9 @@
                         %button.btn.btn-primary{type:  "submit"}
                           %i.icon.fa-calendar-check-o
                           Submit request
+                        \&nbsp;
+                        %small
+                          %em#workshop-status
     #contact.tab-pane{role:  "tabpanel"}
       .panel.panel-primary
         .panel-body
@@ -197,23 +203,23 @@
           .row &nbsp;
           %p.lead For any queries, leave a message:
           %hr
-          %form.form-horizontal
+          %form#contact-form.form-horizontal{data: {action: "/ajax/contact"}}
             .form-group
               %label.col-sm-2.control-label{for:  "contact-inputName"} Name
               .col-sm-10
-                %input#contact-inputName.form-control{type:  "text"}
+                %input#contact-inputName.form-control{type:  "text", name: "name", required: true}
             .form-group
               %label.col-sm-2.control-label{for:  "contact-inputEmail"} Email
               .col-sm-10
-                %input#contact-inputEmail.form-control{type:  "email"}
+                %input#contact-inputEmail.form-control{type:  "email", name: "email"}
             .form-group
               %label.col-sm-2.control-label{for:  "contact-inputPhone"} Contact no.
               .col-sm-10
-                %input#contact-inputPhone.form-control{type:  "tel"}
+                %input#contact-inputPhone.form-control{type:  "tel", name: "phone"}
             .form-group
               %label.col-sm-2.control-label{for:  "contact-inputMsg"} Message
               .col-sm-10
-                %textarea#contact-inputMsg.form-control{rows:  "3"}
+                %textarea#contact-inputMsg.form-control{rows:  "3", name: "msg", required: true}
             .form-group
               .col-sm-10.col-sm-offset-2
                 .g-recaptcha
@@ -222,6 +228,9 @@
                 %button.btn.btn-primary{type:  "submit"}
                   %i.icon.fa-paper-plane
                   Send
+                \&nbsp;
+                %small
+                  %em#contact-status
   / Footer
   -#%footer#footer
     %span.copyright &copy; Inner Dialogue.

@@ -3,6 +3,11 @@ GEM
   specs:
     haml (4.0.7)
       tilt
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.99)
+    pony (1.11)
+      mail (>= 2.0)
     puma (2.15.3)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -18,8 +23,9 @@ PLATFORMS
 
 DEPENDENCIES
   haml (~> 4.0, >= 4.0.7)
+  pony (~> 1.11)
   puma (~> 2.15, >= 2.15.3)
   sinatra (~> 1.4, >= 1.4.6)
 
 BUNDLED WITH
-   1.11.0
+   1.11.2
