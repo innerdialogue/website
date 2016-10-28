@@ -21,5 +21,7 @@ RUN bash -c '\
 
 COPY . /app
 
+EXPOSE 9292
+
 ENTRYPOINT ["/app/scripts/start.sh"]
 CMD puma
