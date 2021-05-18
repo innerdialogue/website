@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 gem 'sinatra', '~> 1.4', '>= 1.4.6'
 gem 'puma', '~> 4.3'
-gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml', '~> 5.0'
 gem 'pony', '~> 1.11'
