@@ -6,9 +6,11 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99)
+    nio4r (2.5.7)
     pony (1.11)
       mail (>= 2.0)
-    puma (2.15.3)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -24,7 +26,7 @@ PLATFORMS
 DEPENDENCIES
   haml (~> 4.0, >= 4.0.7)
   pony (~> 1.11)
-  puma (~> 2.15, >= 2.15.3)
+  puma (~> 4.3)
   sinatra (~> 1.4, >= 1.4.6)
 
 BUNDLED WITH
